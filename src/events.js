@@ -21,10 +21,14 @@ export const responseDataPreparation = () => {
         }
     ];
 
-    let oneEventDetail = eventsList[0].name;
-        console.log(oneEventDetail);
+    let eneEventDetail = eventsList[0];
+    const eventcardbasic = new Eventcardbasic(eneEventDetail);
 
 }
+
+
+
+
 
 
 
