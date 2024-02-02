@@ -3,11 +3,11 @@ import { ModalWindow } from "./form.js";
 
 export class Eventcardbasic {
     constructor(oneEventDetail) {
-
-        this.id = oneEventDetail.id;
-        this.name = oneEventDetail.name;
-        this.description = oneEventDetail.description;
-        this.image_url = oneEventDetail.image_url;
+            //changed to strings for testing
+        this.id = "oneEventDetail.id";
+        this.name = "oneEventDetail.name";
+        this.description = "oneEventDetail.description";
+        this.image_url = "oneEventDetail_image_url";
 
         this.eventCardBasic = null;
         this.eventCardBasic_name = null;
@@ -41,8 +41,14 @@ export class Eventcardbasic {
 
     attachStaticEventListeners = () => {
         this.eventCardBasic_btn.addEventListener('click', () => {
-            this.modalwindow = new ModalWindow(this.id, this.name, this.image_url, this.description);
-            document.body.appendChild(this.modalwindow);
+
+            const popup = new ModalWindow(this.id, this.name, this.image_url, this.description);
+
+            document.body.appendChild(popup.modalWindow);
+            popup.modalWindow.style.position = "absolute";
+            popup.modalWindow.style.left = "50%";
+            popup.modalWindow.style.top = "50%";
+            popup.modalWindow.style.transform = "translate(-50%, -50%)";
         })
 
     }

@@ -79,6 +79,11 @@ export class ModalWindow {
             console.log('click registered')
             console.log(this.createData(this.form)) //check data is available
             formPost(this.id, this.createData(this.form));
+            this.modalWindow.style.display = "none";
+        })
+
+        this.close.addEventListener('click', () => {
+            this.modalWindow.style.display = "none";
         })
     }
 
