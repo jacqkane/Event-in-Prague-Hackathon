@@ -1,0 +1,53 @@
+@import 'variables';
+
+html {
+    box-sizing: border-box;
+    margin: 0px;
+    Padding: 0px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.header {
+    height: 10%;
+    background-color: $header-color;
+}
+
+.containerEventDetail {
+    height: 40%;
+    background-color: white;
+
+    .eventCardDetail {
+        width: 600px;
+        height: 200px;
+        background-color: $card-detail-color;
+    }
+}
+
+
+
+.containerEventList {
+    height: 50%;
+    background-color: white;
+
+    .eventCardBasic {
+        width: 200px;
+        height: 200px;
+        background-color: $card-basic-color;
+    }
+}
