@@ -14,6 +14,7 @@ export class Eventcardbasic {
         this.eventCardBasic_btn = null;
         this.element = null;
         this.modalwindow = null;
+        this.containerEventDetail = null;
         this.createStartingElement();
     }
 
