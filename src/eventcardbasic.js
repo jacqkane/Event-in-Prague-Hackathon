@@ -1,16 +1,19 @@
 import { responseDataPreparation } from "./events.js";
-
+import { ModalWindow } from "./form.js";
 
 export class Eventcardbasic {
-    constructor(eneEventDetail) {
+    constructor(oneEventDetail) {
 
-        this.id = eneEventDetail.id;
-        this.name = eneEventDetail.name;
-        this.description = eneEventDetail.description;
-        this.image_url = eneEventDetail.image_url;
+        this.id = oneEventDetail.id;
+        this.name = oneEventDetail.name;
+        this.description = oneEventDetail.description;
+        this.image_url = oneEventDetail.image_url;
 
-
+        this.eventCardBasic = null;
+        this.eventCardBasic_name = null;
+        this.eventCardBasic_btn = null;
         this.element = null;
+        this.modalwindow = null;
         this.createStartingElement();
     }
 
@@ -21,22 +24,27 @@ export class Eventcardbasic {
     }
 
     prepareStaticHtml = () => {
-        const containerEventList = document.querySelector('.containerEventList');
-        const eventCardBasic = document.createElement('div');
-        eventCardBasic.classList.add('eventCardBasic');
-        containerEventList.appendChild(eventCardBasic);
+
+        this.element = document.createElement('div');
+        this.element.classList.add('eventCardBasic');
+
         const eventCardBasic_name = document.createElement('div');
         eventCardBasic_name.classList.add('eventCardBasic_name');
         eventCardBasic_name.textContent = this.name;
-        eventCardBasic.appendChild(eventCardBasic_name);
-        const eventCardBasic_btn = document.createElement('button');
-        eventCardBasic_btn.textContent = 'More';
-        eventCardBasic_btn.classList.add('eventCardBasic_btn');
-        eventCardBasic.appendChild(eventCardBasic_btn);
+        this.element.appendChild(eventCardBasic_name);
+        this.eventCardBasic_btn = document.createElement('button');
+        this.eventCardBasic_btn.textContent = 'More';
+        this.eventCardBasic_btn.classList.add('eventCardBasic_btn');
+        this.element.appendChild(this.eventCardBasic_btn);
 
     }
 
     attachStaticEventListeners = () => {
+        this.eventCardBasic_btn.addEventListener('click', () => {
+            this.modalwindow = new ModalWindow(this.id, this.name, this.image_url, this.description);
+            document.body.appendChild(this.modalwindow);
+        })
+
     }
 
     updateDynamicValues = () => {

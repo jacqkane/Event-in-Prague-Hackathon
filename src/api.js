@@ -1,18 +1,18 @@
-const loadData = async () => {
+export const loadData = async () => {
     const response = await fetch('https://test-api.codingbootcamp.cz/api/3b3c9ea1/events');
     const eventsList = await response.json();
-    console.log(eventsList);
+    // console.log(eventsList);
 
     const eventDetails = [];
     eventsList.forEach(element => {
-        eventDetails.push({ id: element.id, name: element.name });
+        eventDetails.push({ id: element.id, name: element.name, date: element.date, description: element.description, image_url: element.image_url   });
     });
 
     return eventDetails;
 }
 
 loadData().then(eventDetails => {
-    console.log(eventDetails);
+    // console.log(eventDetails);
     // Do something with the eventDetails array
 });
 
