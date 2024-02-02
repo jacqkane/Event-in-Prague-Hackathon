@@ -58,13 +58,13 @@ const saveTheEvent = async (event) => {
 };
 
 
-const event1 = {
+// const event1 = {
     
-    name: 'Event Name',
-    date: '2024-02-10',
-    description: 'Event description',
-    image_url: 'https://example.com/image.jpg'
+//     name: 'Event Name',
+//     date: '2024-02-10',
+//     description: 'Event description',
+//     image_url: 'https://example.com/image.jpg'
     
-};
+// };
 
-saveTheEvent(event1);
+// saveTheEvent(event1);

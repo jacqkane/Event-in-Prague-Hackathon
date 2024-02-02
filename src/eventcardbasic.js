@@ -14,6 +14,7 @@ export class Eventcardbasic {
         this.eventCardBasic_btn = null;
         this.element = null;
         this.modalwindow = null;
+        this.containerEventDetail = null;
         this.createStartingElement();
     }
 
@@ -41,8 +42,14 @@ export class Eventcardbasic {
 
     attachStaticEventListeners = () => {
         this.eventCardBasic_btn.addEventListener('click', () => {
-            this.modalwindow = new ModalWindow(this.id, this.name, this.image_url, this.description);
-            document.body.appendChild(this.modalwindow);
+
+            const popup = new ModalWindow(this.id, this.name, this.image_url, this.description);
+
+            document.body.appendChild(popup.modalWindow);
+            popup.modalWindow.style.position = "absolute";
+            popup.modalWindow.style.left = "50%";
+            popup.modalWindow.style.top = "50%";
+            popup.modalWindow.style.transform = "translate(-50%, -50%)";
         })
 
     }

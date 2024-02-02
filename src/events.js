@@ -8,9 +8,14 @@ export const responseDataPreparation = async () => {
     const eventsList = await loadData();
     // console.log(eventsList);
     let oneEventDetail = eventsList[0];
-    console.log(oneEventDetail);
-    const eventcardbasic = new Eventcardbasic(oneEventDetail);
-    document.querySelector(".containerEventList").appendChild(eventcardbasic.element);
+    console.log(eventsList);
+
+    for (let i = 0; i < 6; i++) {
+        let oneEventDetail = eventsList[i];
+        const eventcardbasic = new Eventcardbasic(oneEventDetail);
+        document.querySelector(".containerEventList").appendChild(eventcardbasic.element);
+    }
+
 
 
 }
