@@ -1,4 +1,4 @@
-const loadData = async () => {
+export const loadData = async () => {
     const response = await fetch('https://test-api.codingbootcamp.cz/api/3b3c9ea1/events');
     const eventsList = await response.json();
     console.log(eventsList);

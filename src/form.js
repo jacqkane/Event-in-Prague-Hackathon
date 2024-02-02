@@ -1,11 +1,12 @@
 import { formPost } from "./form_post"
 
 export class ModalWindow {
-    constructor() {//input widget name when ready access properties eg. eventwidget.name
-        this.id = 'id'
-        this.name = 'name'
-        this.img = 'img'
-        this.description = 'description'
+    constructor(id, name, image_url, description) {//input widget name when ready access properties eg. eventwidget.name
+        this.id = id
+        this.name = name
+        this.image_url = image_url
+        this.description = description
+
         this.modalWindow = null
         this.button = null
         this.form = null
@@ -48,7 +49,7 @@ export class ModalWindow {
     <div class="close"><button>&times</button></div>    
     <div class="info">
         <h3 class="event_name">${this.name}</h3>
-        <img src="${this.img}" alt="${this.name}">
+        <img src="${this.image_url}" alt="${this.name}">
         <p class="description">${this.description}</p>
     </div> 
     <div class="form_wrapper">
