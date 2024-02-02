@@ -68,3 +68,48 @@ const event1 = {
 };
 
 saveTheEvent(event1);
+
+const registerUserForEvent = async (eventId, email) => {
+    const url = `https://test-api.codingbootcamp.cz/api/3b3c9ea1/events/${eventId}/register`;
+
+    const requestData = {
+        email: email
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    };
+
+    try {
+        const response = await fetch(url, requestOptions);
+        const responseData = await response.json();
+
+        if (response.ok) {
+            // Registration successful
+            console.log('Registration successful');
+            console.log(responseData); // Optional: Log response data
+        } else if (response.status === 404) {
+            // Event not found
+            console.error('Event not found');
+            console.log(responseData); // Optional: Log response data
+        } else if (response.status === 422) {
+            // Validation failed
+            console.error('Validation failed');
+            console.log(responseData); // Optional: Log response data
+        } else {
+            // Handle other errors
+            console.error('Error:', responseData.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+// Example usage:
+const eventId = 3; // Replace with the actual event ID
+const userEmail = 'nedeljkodanilovic@gmail.com'; // Replace with the user's email
+registerUserForEvent(eventId, userEmail);
