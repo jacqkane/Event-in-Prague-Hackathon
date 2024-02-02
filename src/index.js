@@ -1,6 +1,9 @@
 //the importing for Jacq's file
-// import { ModalWindow } from "form.js"
+import { ModalWindow } from "./form";
 
 const modalWindow1 = new ModalWindow()
-document.appendChild(modalWindow1.element);
+document.body.appendChild(modalWindow1.modalWindow);
+
+console.log(modalWindow1.form);
+// console.log(modalWindow1.button);
 // end of Jacq's file
