@@ -20,22 +20,71 @@ html {
 body {
     width: 100vw;
     height: 100vh;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .header {
-    height: 10%;
+    height: 5%;
     background-color: $header-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__text {
+        margin-left: 20px
+    }
+
+    .header__links {
+        margin-right: 20px;
+        a {
+            margin: 0px 20px;
+        }
+    }
 }
 
 .containerEventDetail {
-    height: 40%;
+    height: 45%;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     .eventCardDetail {
         width: 600px;
         height: 200px;
         background-color: $card-detail-color;
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        >p {
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            margin: 0px 10px;
+            font-size: 0.6rem;
+        }
+
+        .event__img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .eventCardDetail__details {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .btn_register {
+            margin: 0px 10px;
+        }
     }
 }
 
@@ -44,10 +93,26 @@ body {
 .containerEventList {
     height: 50%;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
     .eventCardBasic {
         width: 200px;
         height: 200px;
         background-color: $card-basic-color;
+        margin: 10px 10px;
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .eventCardBasic_name {}
+
+        .eventCardBasic_btn {}
+
     }
 }
